@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fat Bikes Marrakech</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="Home-tel.css">
+    <link rel="icon" href="https://i.ibb.co/233wZryj/Fatbikes-rond.png" type="image/png">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#"><img src="https://i.ibb.co/233wZryj/Fatbikes-rond.png" alt="Logo Fat Bikes Marrakech" class="logo-img"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Nos services</a></li>
+            <li><a href="#">Réserver</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="auth-container">
+            <button id="auth-button">Se connecter</button>
+        </div>
+        <!-- Menu hamburger pour mobile -->
+        <div id="hamburger-menu" class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+
+    <!-- Section Vidéo -->
+    <section class="video-intro">
+        <video autoplay muted loop class="video-background">
+            <source src="https://www.shutterstock.com/shutterstock/videos/3727552667/preview/stock-footage-the-koutoubia-mosque-stands-as-a-symbol-of-marrakech-with-its-towering-minaret-visible-from-the.webm" type="video/webm">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="video-content">
+            <h1>Venez découvrir Marrakech à vélo</h1>
+            <p>Réservez votre aventure maintenant!</p>
+            <a href="#" class="cta-button">Réserver</a>
+        </div>
+    </section>
+
+    <!-- Floating Popup -->
+    <div id="popup" class="floating-banner">
+        <h1>Bienvenue à Fat Bikes Marrakech</h1>
+        <p>Venez vivre une aventure inoubliable à Marrakech avec nos vélos tout terrain!</p>
+    </div>
+
+    <script>
+        setTimeout(function () {
+            var popup = document.getElementById('popup');
+            if (popup) {
+                popup.style.display = 'none';
+            }
+        }, 2000);
+
+        // Menu Hamburger
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const navLinks = document.querySelector('.nav-links');
+        hamburgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburgerMenu.classList.toggle('open');
+        });
+    </script>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <h1>Bienvenue à Fat Bikes Marrakech</h1>
+        <p>Explorez Marrakech de manière unique et éco-responsable. Profitez de nos vélos tout terrain pour une aventure inoubliable.</p>
+
+        <!-- Section Services -->
+        <div class="service-cards">
+            <div class="card">
+                <h3>Vélos tout terrain</h3>
+                <p>Découvrez nos vélos adaptés à toutes les routes de Marrakech.</p>
+            </div>
+            <div class="card">
+                <h3>Guides expérimentés</h3>
+                <p>Nos guides vous feront découvrir Marrakech sous un autre angle.</p>
+            </div>
+            <div class="card">
+                <h3>Réservations simples</h3>
+                <p>Réservez facilement vos vélos en ligne avec notre système sécurisé.</p>
+            </div>
+        </div>
+
+        <!-- Section témoignages -->
+        <section class="testimonials">
+            <h2>Avis de nos clients</h2>
+            <div class="testimonial">
+                <p>"L'expérience était incroyable ! Les vélos étaient parfaits et les guides très professionnels. Une expérience que je recommande à tous !"</p>
+                <span>- Karim, Voyageur à Marrakech</span>
+            </div>
+            <div class="testimonial">
+                <p>"Un excellent moyen de découvrir Marrakech autrement. J'ai adoré l'aventure et le service impeccable."</p>
+                <span>- Sarah, Touriste</span>
+            </div>
+        </section>
+
+        <!-- Section FAQ -->
+        <section class="faq">
+            <h2>Foire aux questions</h2>
+            <div class="faq-item">
+                <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                    <h3>Comment réserver un vélo ?</h3>
+                    <span class="faq-arrow" style="color: gray;">&#9660;</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.5s ease;">
+                    <p>Il suffit de remplir le formulaire de réservation en ligne sur notre site. Vous recevrez une confirmation instantanée.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                    <h3>Quels types de vélos proposez-vous ?</h3>
+                    <span class="faq-arrow" style="color: gray;">&#9660;</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.5s ease;">
+                    <p>Nous proposons des vélos tout terrain adaptés à différents types de parcours en montagne et en ville.</p>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            var faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(function (question) {
+                question.addEventListener('click', function () {
+                    var answer = this.nextElementSibling;
+                    if (!answer.classList.contains('open')) {
+                        answer.classList.add('open');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        this.querySelector('.faq-arrow').innerHTML = '&#9650;';
+                    } else {
+                        answer.style.maxHeight = "0";
+                        answer.classList.remove('open');
+                        this.querySelector('.faq-arrow').innerHTML = '&#9660;';
+                    }
+                });
+            });
+        </script>
+
+        <!-- Section Contact -->
+        <section class="contact">
+            <h2>Contactez-nous</h2>
+            <form action="#" method="post">
+                <input type="text" placeholder="Nom" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </section>
+
+<footer>
+    <div class="footer-container">
+        <!-- Section À propos avec le logo -->
+        <div class="footer-about">
+            <img src="https://i.ibb.co/233wZryj/Fatbikes-rond.png" alt="Fat Bikes Marrakech Logo" class="footer-logo">
+            <h2>Fat Bikes Marrakech</h2>
+            <p>Explorez Marrakech d'une manière unique et inoubliable avec nos Fat Bikes. Offrez-vous une aventure en pleine nature, tout en confort et sécurité.</p>
+        </div>
+        
+        <!-- Section Liens -->
+        <div class="footer-links">
+            <h3>Liens</h3>
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#services">Nos Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Politique de confidentialité</a></li>
+                <li><a href="#terms">Conditions d'utilisation</a></li>
+            </ul>
+        </div>
+
+        <!-- Section Réseaux Sociaux -->
+        <div class="footer-social">
+            <h3>Suivez-nous</h3>
+            <a href="https://facebook.com" target="_blank" class="social-icon facebook">Facebook</a>
+            <a href="https://instagram.com" target="_blank" class="social-icon instagram">Instagram</a>
+            <a href="https://twitter.com" target="_blank" class="social-icon twitter">Twitter</a>
+        </div>
+
+        <!-- Bas du Footer -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fat Bikes Marrakech. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="home.js"></script>
+</body>
+
+</html>

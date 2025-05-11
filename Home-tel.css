@@ -1,0 +1,161 @@
+    /* === RESPONSIVE DESIGN MEDIA QUERIES === */
+
+/* --- NAVBAR --- */
+@media (max-width: 768px) {
+    .navbar {
+            display: flex;
+                animation: slideIn 0.5s ease-out;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--primary-color);
+        padding: 10px 20px;
+        position: fixed;
+        flex-direction: row;
+        position: sticky;
+        padding: 15px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: var(--primary-color);
+        width: 100%;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #hamburger-menu {
+        display: block;
+    }
+}
+
+/* --- VIDEO INTRO --- */
+@media (max-width: 768px) {
+    .video-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .video-content p {
+        font-size: 1.1rem;
+    }
+
+    .video-content .cta-button {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 14px 0;
+    }
+}
+
+
+/* --- SERVICE CARDS --- */
+@media (max-width: 1024px) {
+    .service-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-cards {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .card {
+        margin: 0 auto;
+    }
+}
+
+/* --- TESTIMONIALS --- */
+@media (max-width: 768px) {
+    .testimonial {
+        margin: 20px auto;
+    }
+}
+
+/* --- FAQ --- */
+@media (max-width: 768px) {
+    .faq-item {
+        padding: 10px;
+    }
+
+    .faq-question {
+        font-size: 1.1rem;
+    }
+
+    .faq-answer {
+        font-size: 0.95rem;
+    }
+}
+
+/* --- CONTACT FORM --- */
+@media (max-width: 768px) {
+    .contact form {
+        padding: 20px;
+    }
+
+    .contact form input,
+    .contact form textarea {
+        padding: 12px;
+    }
+
+    .contact form button {
+        font-size: 1rem;
+    }
+}
+
+/* --- FOOTER --- */
+@media (max-width: 992px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        height: 900px; /* Contrôle de la hauteur ajouté */
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-social {
+        width: 100%;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .footer-about .footer-logo {
+        margin: 0 auto 15px;
+    }
+}
+
+/* --- BOUTON SE CONNECTER --- */
+@media (max-width: 768px) {
+    #auth-button {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+}
+
+/* --- GÉNÉRAL --- */
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+}
